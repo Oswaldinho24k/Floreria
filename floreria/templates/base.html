@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		{%block titulo%}
+		Florería
+		{%endblock titulo%}
+	</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<nav>
+		<a href="#">Home</a>
+		<a href="{%url 'products:catalog' %}">Arreglos</a>
+	</nav>
+
+
+{%block content%}
+{%endblock content%}
+
+{%block scripts%}
+{%endblock scripts%}
+</body>
+</html>
