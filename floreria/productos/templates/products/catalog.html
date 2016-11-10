@@ -1,0 +1,19 @@
+<h1>Catálogo de arreglos florales</h1>
+<section>
+{%for p in products%}
+	<a href="{%url 'products:detail' p.slug%}">
+		<div>
+
+		<figure>
+			<img src="/media/{{p.image}}" width="10%">
+			<figcaption>{{p.name}}</figcaption>
+		</figure>
+
+	</div>
+	</a>
+	
+{%empty%}
+<span>No hay na...</span>
+
+{%endfor%}
+</section>
