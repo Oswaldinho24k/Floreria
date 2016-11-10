@@ -1,0 +1,41 @@
+{%extends 'base.html'%}
+{%block content%}
+<h1>El carrito</h1>
+
+<table>
+	<thead>
+		<tr>
+			<th>Arreglo</th>
+			<th>Cantidad</th>
+			<th>Quitar</th>
+			<th>Precio</th>
+			<th>Sub-Total</th>
+		</tr>
+	</thead>
+	<tbody>
+		{%for item in cart%}
+			{%with producto=item.product%}
+			<tr>
+				<td>{{producto.name}}</td>
+				<td>
+					{{item.quantity}}
+					<form action="{%url 'cart:cart_add' producto.id%}" method="post">
+						{% csrf_token %}
+						{{form.as_p}}
+						<input type="submit" value="Update">
+					</form>
+					
+				</td>
+				<td>{{item.price}}</td>
+				<td>{{item.total_price}}</td>
+				<td><a href="{%url 'cart:cart_remove' producto.id%}">Remove</a></td>
+			</tr>
+			{%endwith%}
+		{%endfor%}
+	</tbody>
+</table>
+
+
+{%endblock content%}
+{%block scripts%}
+{%endblock scripts%}

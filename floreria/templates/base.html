@@ -13,6 +13,18 @@
 	<nav>
 		<a href="#">Home</a>
 		<a href="{%url 'products:catalog' %}">Arreglos</a>
+		<a href="{%url 'cart:cart_detail' %}">Cart</a>
+		<p>
+			{%with total_items=cart|length%}
+			{%if cart|length > 0%}
+			Tu carrito:<a href="{%url 'cart:cart_detail'%}">
+				{{total_items}} item{{total_items|pluralize}}, $ {{cart.get_total_price}}
+			</a>
+			{%else%}
+			the cart is empty
+			{%endif%}
+			{%endwith%}
+		</p>
 	</nav>
 
 

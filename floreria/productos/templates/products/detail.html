@@ -11,9 +11,49 @@
 	<h2>{{product.name}}</h2>
 	<img src="/media/{{product.image}}" width="50%">
 	<h5>${{product.price}}</h5>
+	<form action="{%url 'cart:cart_add' product.id%}" method="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit" value="Añadir">
+	</form>
+<!--<form method="post">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="hidden" class="id" value="{{product.id}}">
+		<input type="hidden" class="q" value="{{item.quantity}}">
+		
+	</form>
+	<button class="car">Añadir</button>-->
 
 	<p>Description:<br>{{product.desc}}</p>
 
 </section>
 
 {%endblock content%}
+{%block scripts%}
+<!--<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script>
+
+	$('.car').on('click', function(){
+		$.ajax({
+			method:'GET',
+			url:'/cart/prueba/'+ $('.id').val(),
+			data:{
+				'quantity':$('.q').val()
+			},
+			success:function(){
+				console.log('Done!');
+				console.log($('.q').val());
+			},
+			error:function(e){
+				console.log(e);
+			}
+
+		});
+	});
+</script>-->
+
+{%endblock scripts%}

@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import View
 from .models import Product
+from cart.forms import CartAddProductForm
 # Create your views here.
 
 class ListView(View):
@@ -20,11 +21,11 @@ class DetailView(View):
 		product=get_object_or_404(Product, slug=slug)
 
 		template_name='products/detail.html'
-		#form = CartAddProductForm()
+		form = CartAddProductForm()
 
 		context={
-		'product':product
-		#'form':form
+		'product':product,
+		'form':form
 		}
 
 		return render(request, template_name, context)
