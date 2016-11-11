@@ -1,0 +1,22 @@
+{
+  "name": "floreria",
+  "homepage": "https://github.com/Oswaldinho24k/Floreria",
+  "authors": [
+    "Oswaldo <oswalfut_96@hotmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}

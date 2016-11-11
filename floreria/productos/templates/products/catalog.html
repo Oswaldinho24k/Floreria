@@ -6,7 +6,9 @@
 {%block content%}
 
 
-<h1>Catálogo de arreglos florales</h1>
+<div class="well">
+	<h1>Catálogo de arreglos florales</h1>
+</div>
 <section>
 {%for p in products%}
 	<a href="{%url 'products:detail' p.slug%}">

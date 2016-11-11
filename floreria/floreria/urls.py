@@ -19,6 +19,7 @@ from django.conf import settings
 from django.views.static import serve
 from cart import urls as cartUrls
 from productos import urls as productosUrls
+from editor import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -28,6 +29,7 @@ urlpatterns = [
         regex=r'^media/(?P<path>.*)$',
         view=serve,
         kwargs={'document_root':settings.MEDIA_ROOT}),
+    url(r'^editor/$', views.Main.as_view(), name="main")
 
    
 
