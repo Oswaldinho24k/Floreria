@@ -30,8 +30,14 @@
 				<td>{{item.total_price}}</td>
 				<td><a href="{%url 'cart:cart_remove' producto.id%}">Remove</a></td>
 			</tr>
+
 			{%endwith%}
 		{%endfor%}
+			<tr>
+				<td>Total</td>
+				<td colspan="3"></td>
+				<td>${{cart.get_total_price}}</td>
+			</tr>
 	</tbody>
 </table>
 
